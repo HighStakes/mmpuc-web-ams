@@ -10,6 +10,7 @@ public class HibernateUtil {
 	 private static ServiceRegistry serviceRegistry;
 
 	public static SessionFactory getSessionFactory() {
+		try{
 		if (sessionFactory == null) {
 //			Configuration configuration = new Configuration();
 //			configuration.configure("hibernate.cfg.xml");
@@ -25,6 +26,9 @@ public class HibernateUtil {
 		      
 		     serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();        
 		     sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+		}
+		}catch(Exception e){
+			e.printStackTrace();
 		}
 
 		return sessionFactory;
