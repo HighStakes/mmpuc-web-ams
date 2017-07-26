@@ -29,33 +29,34 @@ public class SMSSendControllerServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-    	try{
-    		//res.sendRedirect("Success.html");
-		StudentDAO studentDao = new StudentDAO();
-		String studentId = req.getParameter("sid");
-		char classId = req.getParameter("class").charAt(0);
-		char section = req.getParameter("section").charAt(0);
-		String fname = req.getParameter("fname");
-		String lname = req.getParameter("lname");
-		String contact = req.getParameter("contact");
-		String gender = req.getParameter("gender");
-		System.out.println("GENDER :"+gender);
-		String allSubjects = "";
-		String[] subjects = req.getParameterValues("subjects");
-		 
-		for (int i = 0; i < subjects.length; i++) {
-			allSubjects = subjects[i]+","+allSubjects;
-		}
-		if(allSubjects.charAt(allSubjects.length() - 1) == ','){
-			allSubjects = allSubjects.substring(0,allSubjects.length() - 1);
-		}
-		studentDao.saveStudentDetails(studentId,classId,section,fname,lname,contact,gender,allSubjects);
-		//sendMessage(fname+" "+lname, contact, msg);
-		res.sendRedirect("../Success.html");
-    	}catch(Exception e){
-    		 e.printStackTrace();
-    		System.out.println("Message:"+e.getMessage());
-    	}
+    	res.sendRedirect("../Success.html");
+//    	try{
+//    		//res.sendRedirect("Success.html");
+//		StudentDAO studentDao = new StudentDAO();
+//		String studentId = req.getParameter("sid");
+//		char classId = req.getParameter("class").charAt(0);
+//		char section = req.getParameter("section").charAt(0);
+//		String fname = req.getParameter("fname");
+//		String lname = req.getParameter("lname");
+//		String contact = req.getParameter("contact");
+//		String gender = req.getParameter("gender");
+//		System.out.println("GENDER :"+gender);
+//		String allSubjects = "";
+//		String[] subjects = req.getParameterValues("subjects");
+//		 
+//		for (int i = 0; i < subjects.length; i++) {
+//			allSubjects = subjects[i]+","+allSubjects;
+//		}
+//		if(allSubjects.charAt(allSubjects.length() - 1) == ','){
+//			allSubjects = allSubjects.substring(0,allSubjects.length() - 1);
+//		}
+//		studentDao.saveStudentDetails(studentId,classId,section,fname,lname,contact,gender,allSubjects);
+//		//sendMessage(fname+" "+lname, contact, msg);
+//		res.sendRedirect("../Success.html");
+//    	}catch(Exception e){
+//    		 e.printStackTrace();
+//    		System.out.println("Message:"+e.getMessage());
+//    	}
 	}
 
 }

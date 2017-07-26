@@ -34,22 +34,24 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		try {
-			PrintWriter pw = res.getWriter();
-			LoginDAO loginDao = new LoginDAO();
-			String username = req.getParameter("username");
-			String password = req.getParameter("password");
-			
-			if (loginDao.verifyUser(username, password)) {
-				System.out.println("In DOGET");
-				res.sendRedirect("index.html");
-			}else{
-				res.sendRedirect("Error.html");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Message:" + e.getMessage());
-		}
+ res.sendRedirect("../index.html");
+//		try {
+
+//			LoginDAO loginDao = new LoginDAO();
+//			String username = req.getParameter("username");
+//			String password = req.getParameter("password");
+//			
+//		if (loginDao.verifyUser(username, password)) {
+//			 	 
+//				res.sendRedirect("../index.html");
+//			}else{
+//				res.sendRedirect("../Error.html");
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			System.out.println("Message:" + e.getMessage());
+//		}
+		
 	}
 
 	/**

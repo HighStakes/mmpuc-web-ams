@@ -5,8 +5,8 @@
 <hibernate-configuration>
 	<session-factory>
 		 <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		 <!-- <property name="connection.url">jdbc:mysql://localhost:3306/iAttend</property>  -->
-		 <property name="connection.url">jdbc:mysql://35.189.156.176/iAttend</property> 
+		  <property name="connection.url">jdbc:mysql://localhost:3306/iAttend</property> 
+		 <!-- <property name="connection.url">jdbc:mysql://mmpuc-web-ams:asia-northeast1:mmpuc-web-ams/iAttend</property>  -->
 		<property name="connection.username">root</property>
 		<property name="connection.password">dream@87</property>
 		<property name="connection.autocommit">true</property>
